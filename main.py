@@ -9,9 +9,9 @@ from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
-
-
 app = FastAPI()
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
 
@@ -67,11 +67,5 @@ async def del_prod(request: Request, item_id: int):
     mydb.commit()
     result=mycursor.rowcount
     return templates.TemplateResponse('/listadesejos.html/', {'request': request})
-  
-    
-       
-if __name__ == '__main__':
-    uvicorn.run(app)
-                
 
-   
+

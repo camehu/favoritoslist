@@ -8,3 +8,7 @@ mydb = mysql.connector.connect(
   
 )
 mycursor = mydb.cursor()
+
+
+class Base( object ):
+    pass
