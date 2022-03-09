@@ -7,8 +7,7 @@ mydb = mysql.connector.connect(
   database="wishlist"
   
 )
+
 mycursor = mydb.cursor()
 
 
-class Base( object ):
-    pass

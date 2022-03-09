@@ -1,7 +1,3 @@
-from ast import For, Return
-from contextlib import redirect_stderr
-from itertools import count
-from unittest import result
 from fastapi import FastAPI, Request
 import uvicorn
 from database import mycursor, mydb
